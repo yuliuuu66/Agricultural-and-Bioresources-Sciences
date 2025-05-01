@@ -1,0 +1,19 @@
+:root {
+    --Primary-Color: #111111;
+    --Secondary-Color: #666666;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: var(--Primary-Color);
+}

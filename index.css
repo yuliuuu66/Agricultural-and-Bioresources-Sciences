@@ -1,0 +1,15 @@
+#tabContainer {
+    height: 80vh;
+    width: 15rem;
+    background: var(--Secondary-Color);
+}
+
+#tabContainer img {
+    height: 30%;
+}
+
+#tabContainer button {
+    width: inherit;
+    height: 10%;
+    background: cadetblue;
+}
