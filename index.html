@@ -9,15 +9,38 @@
 
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="index.css">
+
+    <script>
+        function setActive(clickedButton, contentKey) {
+            const buttons = document.querySelectorAll('.tabButton')
+            buttons.forEach(btn => btn.classList.remove('active'))
+            clickedButton.classList.add('active')
+
+            const content = document.getElementById("content")
+
+            const contentMap = {
+                intro: `<p class="title">簡要介紹</p><p>這裡是生物資源學群的簡要介紹內容。</p>`,
+                traits: `<p class="title">性格特質</p><p>對自然有興趣、細心、有耐心。</p>`,
+                subjects: `<p class="title">核心學科</p><p>生物、化學、地球科學等。</p>`,
+                majors: `<p class="title">主要學類</p><p>農業、林業、水產、動物科學等。</p>`
+            }
+
+            content.innerHTML = contentMap[contentKey]
+        }
+    </script>
 </head>
 
 <body>
     <div id="tabContainer">
         <img src="" alt="">
-        <button type="button">簡要介紹</button>
-        <button type="button">性格特質</button>
-        <button type="button">核心學科</button>
-        <button type="button">主要學類</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'intro')">簡要介紹</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'traits')">性格特質</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'subjects')">核心學科</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'majors')">主要學類</button>
+    </div>
+    <div id="content">
+        <p class="title">簡要介紹</p>
+        <p>這裡是生物資源學群的簡要介紹內容。</p>
     </div>
 </body>
 
