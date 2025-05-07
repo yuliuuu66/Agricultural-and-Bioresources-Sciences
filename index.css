@@ -13,7 +13,8 @@
 }
 
 #tabContainer img {
-    height: 30%;
+    width: 15rem;
+    padding-block: 1rem;
 }
 
 /*左側欄按鈕*/
@@ -52,4 +53,25 @@
 /*內容標題粗體*/
 p.title {
     font-weight: bolder;
+}
+
+#content img {
+    width: 70%;
+}
+
+#hint {
+    display: none;
+    position: fixed;
+    width: 15em;
+    height: 9rem;
+    background: var(--HintBoard-Color);
+    border-radius: 5px;
+    /*bottom: 2rem;
+    right: 2rem;*/
+    padding-inline: 10px;
+}
+
+#hint p.hint {
+    color: var(--Text-Color);
+    font-size: 0.8rem;
 }

@@ -6,12 +6,18 @@
     --Secondary-Color: #8F5F5E;
     --Text-Color: #5F411B;
     --Link-Color: #E67F25;
+    --HintBoard-Color: #FFFFFF;
 }
 
-/*清除基本樣式*/
+/*清除並建立基本樣式*/
 a {
     text-align: center;
     text-decoration: none;
+    color: var(--Text-Color);
+}
+
+a:hover {
+    color: var(--Link-Color);
 }
 
 button {
