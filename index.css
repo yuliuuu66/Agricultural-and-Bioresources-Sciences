@@ -12,8 +12,11 @@
     position: sticky;
 }
 
+/*左側欄圖片*/
 #tabContainer img {
+    /*寬度等寬*/
     width: 15rem;
+    /*上下間距*/
     padding-block: 1rem;
 }
 
@@ -55,23 +58,30 @@ p.title {
     font-weight: bolder;
 }
 
+/*內容圖片寬度*/
 #content img {
     width: 70%;
 }
 
+/*滑鼠經過提示板*/
 #hint {
+    /*常態隱藏*/
     display: none;
+    /*顯示方式*/
     position: fixed;
+    /*長度寬度設定*/
     width: 15em;
     height: 9rem;
+    /*背景顏色、圓角*/
     background: var(--HintBoard-Color);
     border-radius: 5px;
-    /*bottom: 2rem;
-    right: 2rem;*/
+    /*內部間距*/
     padding-inline: 10px;
 }
 
+/*提示板內容*/
 #hint p.hint {
+    /*文字顏色、大小*/
     color: var(--Text-Color);
     font-size: 0.8rem;
 }

@@ -16,18 +16,19 @@ a {
     color: var(--Text-Color);
 }
 
-a:hover {
-    color: var(--Link-Color);
-}
-
 button {
     background: none;
     border: none;
 }
 
+/*滑鼠經過連結換色*/
+a:hover {
+    color: var(--Link-Color);
+}
+
 /*全頁樣式*/
 html {
-    /*禁止圈選*/
+    /*禁止文字被圈選*/
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
