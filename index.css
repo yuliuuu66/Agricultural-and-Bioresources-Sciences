@@ -15,9 +15,10 @@
 /*左側欄圖片*/
 #tabContainer img {
     /*寬度等寬*/
-    width: 15rem;
-    /*上下間距*/
+    width: 11rem;
+    /*上下間距、左右間距*/
     padding-block: 1rem;
+    padding-inline: 2rem;
 }
 
 /*左側欄按鈕*/

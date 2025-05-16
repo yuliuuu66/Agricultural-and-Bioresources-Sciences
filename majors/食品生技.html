@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- 這裡要改頁面標題 -->
-    <title>生物資源 學群</title>
+    <title>學類 食品生技</title>
 
     <link rel="stylesheet" href="../global.css">
     <link rel="stylesheet" href="../index.css">
@@ -63,15 +63,27 @@
             //各個分頁的內容存放
             const contentMap = {
                 intro: `
+                        <p class="title">這個學類學什麼？</p>
+                        <p>探討農產品製造與貯存的技術、效率、安全性與成品效益。
+                        結合生物、化學、物理及其他科學，學習如何把可負擔且安全的食品帶到消費者手上，讓消費者更安全更多樣的食品選擇。
+                        食品生技學類主要學習食品分析、食品化學、食品加工、食品微生物學、食品營養學、食品衛生與安全及食品工程等學問。</p>
+                        <p class="title">相似學類比一比</p>
+                        <p>本學類著重於食品研發（食品加工技術及新產品開發）、食品品質監控（食品分析檢驗）、食品衛生安全（食品安全、食品微生物、食品法規）等專業知識的學習。
+                        易與食品營養學類搞混。
+                        食品營養學類：注重的是人體食用之後的消化、營養吸收、短期與長期的健康效益。
+                        兩者都與食品有關，食品科技在處理食品吃以前的事，食品營養處理吃以後的事。</p>
+
                         <a href="majors/學類(需改名).html" target="_blank">這種的標籤放連結</a>
                         <p class="title">這種的標籤放標題</p>
                         <p>這種的標籤放內容</p>
                         <p>移動到 <span class="hoverTarget" data-hint="這是提示填寫<br>使用br換行">這裡面的文字會控制hover效果</span></p>
                         <img src="../images/展示用(可刪除).png" alt="圖片註解放這裡">
                         `,
-                traits: `<p class="title">性格特質</p><p>對自然有興趣、細心、有耐心。</p>`,
-                subjects: `<p class="title">核心學科</p><p>生物、化學、地球科學等。</p>`,
-                majors: `<p class="title">主要學類</p><p>農業、林業、水產、動物科學等。</p>`
+                road: `<p class="title">性格特質</p><p>對自然有興趣、細心、有耐心。</p>`,
+                prepare: `<p class="title">核心學科</p><p>生物、化學、地球科學等。</p>`,
+                ability: `<p class="title">主要學類</p><p>農業、林業、水產、動物科學等。</p>`,
+                schools: `<p>xxxx</p>`,
+                experience: `<p>xxxx</p>`
                 //名字要一樣: `<p>xxxx</p>` p.s.前一行結尾記得加[ , ]
             }
 
@@ -83,12 +95,14 @@
 <body>
     <div id="tabContainer">
         <!-- 一張標題圖片可放置，透明底建議 -->
-        <img src="../images/展示用(可刪除).png" alt="">
+        <img src="../images/food.png" alt="">
         <!-- 按鈕和內容綁定，調整內容上面js -->
-        <button type="button" class="tabButton" onclick="setActive(this, 'intro')">簡要介紹</button>
-        <button type="button" class="tabButton" onclick="setActive(this, 'traits')">性格特質</button>
-        <button type="button" class="tabButton" onclick="setActive(this, 'subjects')">核心學科</button>
-        <button type="button" class="tabButton" onclick="setActive(this, 'majors')">主要學類</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'intro')">學類介紹</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'road')">生涯進路</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'prepare')">高中準備</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'ability')">能力特質</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'schools')">對應校系</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'experience')">學類體驗</button>
         <!-- <button type="button" class="tabButton" onclick="setActive(this, '名字要一樣')">按鈕擴增範例</button> -->
     </div>
     <div id="content">
