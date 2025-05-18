@@ -105,7 +105,7 @@ div.infoBookmark {
     /*圓角設定*/
     border-radius: 15px;
     /*背景顏色*/
-    background: var(--HintBoard-Color);
+    background: var(--Label-Contect-BG-Color);
     /*超出的內容隱藏*/
     overflow: hidden;
     /*和上下文間距*/
@@ -124,6 +124,7 @@ div.contentArea p {
     margin-inline: 16px;
     /*文字大小*/
     font-size: 0.8rem;
+    color: var(--Secondary-Text-Color);
 }
 
 /*標籤按鈕*/
@@ -131,6 +132,7 @@ button.labelButton {
     /*文字內收間距*/
     padding-inline: 20px;
     padding-block: 7px;
+    color: white;
     /*背景顏色*/
     background: var(--Label-BG-Color);
     /*左上右上圓角*/
@@ -140,5 +142,15 @@ button.labelButton {
 
 /*標籤按鈕點擊*/
 button.labelButtonActive {
-    background: var(--HintBoard-Color);
+    background: var(--Label-Contect-BG-Color);
+    color: var(--Secondary-Text-Color);
+    font-weight: bolder;
+}
+
+div.contentArea a {
+    color: var(--Label-BG-Color);
+}
+
+div.contentArea a:hover {
+    color: white;
 }

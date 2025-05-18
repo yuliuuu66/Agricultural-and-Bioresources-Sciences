@@ -116,7 +116,75 @@
                         <p>這種的標籤放內容</p>
                         <img src="../images/展示用(可刪除).png" alt="圖片註解放這裡">
                         `,
-                road: `<p class="title">性格特質</p><p>對自然有興趣、細心、有耐心。</p>`,
+                road: `
+                        <p class="title">業務／貿易／銷售</p>
+                        <!-- 這是切換標籤 -->
+                        <div class="infoBookmark">
+                            <div class="buttonArea">
+                                <button class="labelButton labelButtonActive"
+                                    onclick="setBookmark(this, 'job1')">業務人員</button>
+                                <!-- 擴充方式同上，setBookmark(this, '標籤')避免一樣的標籤名稱 -->
+                            </div>
+                            <div class="contentArea">
+                                <!-- 這裡放載入的時候要顯示的，跟第一個標籤相同內容 -->
+                                <p class="title">性格特質：</p>
+                                <p>針對企業、團體或個人，從事商品或服務之國內外銷售、業務推廣、客戶開發等工作。</p>
+                                <p class="title">104薪資情報：</p>
+                                <p><a href="https://guide.104.com.tw/salary/job/2005003004?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～5.8萬／國內業務</a></p>
+                                <p><a href="https://guide.104.com.tw/salary/job/2005003005?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～6.0萬／國外業務</a></p>                             
+                            </div>
+                        </div>
+
+                        <p class="title">工程／研發／生技</p>
+                        <div class="infoBookmark">
+                            <div class="buttonArea">
+                                <button class="labelButton labelButtonActive"
+                                    onclick="setBookmark(this, 'job2')">食品研發人員</button>
+                                <button class="labelButton" onclick="setBookmark(this, 'job3')">產品研發工程師</button>
+                                <button class="labelButton" onclick="setBookmark(this, 'job4')">生物科技研發人員</button>
+                            </div>
+                            <div class="contentArea">
+                                <p class="title">性格特質：</p>
+                                <p>從事研究食品製造及加工問題，發展發展食品或食材之特性、加工、保存、添加物、營養、包裝等工作。</p>
+                                <p class="title">104薪資情報：</p>
+                                <p><a href="https://guide.104.com.tw/salary/job/2008003001?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.7萬～5.0萬／食品研發人員</a></p>                                
+                            </div>
+                        </div>
+
+                        <p class="title">品管／製造／環衛</p>
+                        <div class="infoBookmark">
+                            <div class="buttonArea">
+                                <button class="labelButton labelButtonActive"
+                                    onclick="setBookmark(this, 'job5')">ISO／品保人員</button>
+                                <button class="labelButton" onclick="setBookmark(this, 'job6')">品管檢驗人員</button>
+                                <button class="labelButton" onclick="setBookmark(this, 'job7')">安全／衛生相關檢驗人員</button>
+                                <!-- 擴充方式同上，setBookmark(this, '標籤')避免一樣的標籤名稱 -->
+                            </div>
+                            <div class="contentArea">
+                                <!-- 這裡放載入的時候要顯示的，跟第一個標籤相同內容 -->
+                                <p class="title">性格特質：</p>
+                                <p>在品質管制工程師指導下，從事有關品質管制資料的收集、整理、分析、報告與存檔，協助推展品質管制制度，保證產品品質合乎顧客需求之工作。</p>
+                                <p class="title">104薪資情報：</p>
+                                <p><a href="https://guide.104.com.tw/salary/job/2009003009?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.4萬～4.6萬／ISO／品保人員</a>
+                            </div>
+                        </div>
+
+                        <p class="title">旅遊／餐飲／休閒</p>
+                        <div class="infoBookmark">
+                            <div class="buttonArea">
+                                <button class="labelButton labelButtonActive"
+                                    onclick="setBookmark(this, 'job8')">食品衛生管理師</button>
+                                <!-- 擴充方式同上，setBookmark(this, '標籤')避免一樣的標籤名稱 -->
+                            </div>
+                            <div class="contentArea">
+                                <!-- 這裡放載入的時候要顯示的，跟第一個標籤相同內容 -->
+                                <p class="title">性格特質：</p>
+                                <p>從事控管食品從原料來源、加工、生產製造到完成品之每個階段的安全衛生管理。</p>
+                                <p class="title">104薪資情報：</p>
+                                <p><a href="https://guide.104.com.tw/salary/job/2006001009?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.4萬～4.5萬／食品衛生管理師</a></p>
+                            </div>
+                        </div>
+                        `,
                 prepare: `<p class="title">核心學科</p><p>生物、化學、地球科學等。</p>`,
                 ability: `<p class="title">主要學類</p><p>農業、林業、水產、動物科學等。</p>`,
                 schools: `<p>xxxx</p>`,
@@ -125,6 +193,65 @@
             }
 
             content.innerHTML = contentMap[contentKey]
+        }
+
+        function setBookmark(clickedButton, contentKey) {
+            const contentMap = {
+                job1: `
+                        <p class="title">性格特質：</p>
+                        <p>針對企業、團體或個人，從事商品或服務之國內外銷售、業務推廣、客戶開發等工作。</p>
+                        <p class="title">104薪資情報：</p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2005003004?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～5.8萬／國內業務</a></p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2005003005?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～6.0萬／國外業務</a></p>`,
+                job2: `
+                        <p class="title">性格特質：</p>
+                        <p>從事研究食品製造及加工問題，發展發展食品或食材之特性、加工、保存、添加物、營養、包裝等工作。</p>
+                        <p class="title">104薪資情報：</p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2008003001?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.7萬～5.0萬／食品研發人員</a></p>`,
+                job3: `
+                        <p class="title">性格特質：</p>
+                        <p>依據市場產品需求，進行產品的初始設計，並負責新產品製程的導入，並進行製程的檢測，以使新產品能夠穩定生產且符合相關標準之工作。</p>
+                        <p class="title">104薪資情報：</p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2009002001?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～6.0萬／生產技術／製程工程師</a></p>`,
+                job4: `
+                        <p class="title">性格特質：</p>
+                        <p>從事動植物品種、基因等成分研究，並將其研究結果運用至生物、農業、醫學、工業等領域。</p>
+                        <p class="title">104薪資情報：</p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2008003003?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.1萬～5.8萬／生物科技研發人員</a>`,
+                job5: `
+                        <p class="title">性格特質：</p>
+                        <p>在品質管制工程師指導下，從事有關品質管制資料的收集、整理、分析、報告與存檔，協助推展品質管制制度，保證產品品質合乎顧客需求之工作。</p>
+                        <p class="title">104薪資情報：</p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2009003009?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.4萬～4.6萬／ISO／品保人員</a>`,
+                job6: `
+                        <p class="title">性格特質：</p>
+                        <p>根據品質管制標準規格，檢查成品，使其符合製造標準之工作。</p>
+                        <p class="title">104薪資情報：</p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2009003010?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.1萬～4.0萬／品管／檢驗人員</a>`,
+                job7: `
+                        <p class="title">性格特質：</p>
+                        <p>從事職業工作場所、產品生產、使用及銷售等安全衛生檢驗或檢查工作。</p>
+                        <p class="title">104薪資情報：</p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2009004002?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.5萬～4.5萬／安全／衛生相關檢驗人員</a></p>`,
+                job8: `
+                        <p class="title">性格特質：</p>
+                        <p>從事控管食品從原料來源、加工、生產製造到完成品之每個階段的安全衛生管理。</p>
+                        <p class="title">104薪資情報：</p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2006001009?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.4萬～4.5萬／食品衛生管理師</a></p>`,
+                majors: `<p class="title">主要學類</p><p>獸醫  植物保護  生態  農藝  動物科學  園藝  森林  海洋資源  <a href="majors/食品生技.html" target="_blank">食品生技</a></p>`
+            };
+
+            // 找到這個按鈕所屬的 infoBookmark 區塊
+            const infoBlock = clickedButton.closest('.infoBookmark');
+
+            // 移除該區塊內所有 tabButton 的 active
+            const buttons = infoBlock.querySelectorAll('.labelButton');
+            buttons.forEach(btn => btn.classList.remove('labelButtonActive'));
+            clickedButton.classList.add('labelButtonActive');
+
+            // 將對應內容寫入這個區塊的 contentArea
+            const contentArea = infoBlock.querySelector('.contentArea');
+            contentArea.innerHTML = contentMap[contentKey] || '';
         }
     </script>
 </head>
