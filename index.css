@@ -51,12 +51,16 @@
     color: var(--Text-Color);
     /*上下文字距離*/
     padding-top: 7rem;
-    padding-bottom: 3rem;
+    padding-bottom: 7rem;
 }
 
 /*內容標題粗體*/
 p.title {
     font-weight: bolder;
+}
+
+p.title2 {
+    color: var(--Secondary-Text-Color);
 }
 
 /*內容圖片寬度*/
@@ -163,15 +167,23 @@ table {
     overflow: hidden;
 }
 
+table a {
+    color: var(--Label-BG-Color);
+}
+
+table a:hover {
+    color: white;
+}
+
 th {
-    width: 15vw;
+    width: 25vw;
     height: 2.5rem;
     background-color: var(--Label-BG-Color);
     color: white;
 }
 
 td {
-    width: 15vw;
+    width: 25vw;
     height: 2rem;
     text-align: center;
 
