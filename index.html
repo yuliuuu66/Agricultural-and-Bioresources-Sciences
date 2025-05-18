@@ -38,8 +38,8 @@
 
             //根據滑鼠位置和 10px 偏移量決定提示板塊顯示位置
             contentContainer.addEventListener('mousemove', (e) => {
-                hint.style.top = (e.pageY + 10) + 'px'
-                hint.style.left = (e.pageX + 10) + 'px'
+                hint.style.top = (e.clientY + 10) + 'px'
+                hint.style.left = (e.clientX + 10) + 'px'
             });
 
             //滑鼠離開時再次隱藏提示板塊和內容
@@ -66,7 +66,9 @@
                         <p class="title">這種的標籤放標題</p>
                         <p>這種的標籤放內容</p>
                         <p>移動到 <span class="hoverTarget" data-hint="這是提示填寫<br>使用br換行">這裡面的文字會控制hover效果</span></p>
+                        <p>移動到 <span class="hoverTarget" data-hint="營養只是食品的一部份，安全更不容忽視，本學類課程內容包含營養學，更具備食品加工 （製備） 與食品安全的理論、實作與應用課程">食品只需重視營養說明 !?</span></p>
                         <img src="images/展示用(可刪除).png" alt="展示用(可刪除)">
+                    
                         `,
                 traits: `<p class="title">性格特質</p><p>對自然有興趣、細心、有耐心。</p>`,
                 subjects: `<p class="title">核心學科</p><p>生物、化學、地球科學等。</p>`,

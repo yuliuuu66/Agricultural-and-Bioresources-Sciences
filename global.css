@@ -7,13 +7,14 @@
     --Text-Color: #402C04;
     --Link-Color: #8fa414;
     --HintBoard-Color: #F5E59F;
+    --Hover-BG-Color: rgba();
 }
 
 /*清除並建立基本樣式*/
 a {
     text-align: center;
     text-decoration: none;
-    color: var(--Secondary-Color);
+    color: var(--Link-Color);
 }
 
 button {
@@ -23,7 +24,7 @@ button {
 
 /*滑鼠經過連結換色*/
 a:hover {
-    color: var(--Link-Color);
+    color: var(--Secondary-Color);
 }
 
 /*全頁樣式*/

@@ -86,3 +86,9 @@ p.title {
     color: var(--Text-Color);
     font-size: 0.8rem;
 }
+
+span.hoverTarget {
+    padding-inline: 5px;
+    border-radius: 3px;
+    background: rgba(145, 196, 196, 0.45);
+}
