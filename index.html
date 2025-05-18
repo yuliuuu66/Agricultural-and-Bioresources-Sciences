@@ -84,7 +84,34 @@
                             </div>
                         </div>
                             `,
-                traits: `<p class="title">性格特質</p><p>對自然有興趣、細心、有耐心。</p>`,
+                traits: `<p class="title">多元能力</p>
+                        <p><span class="hoverTarget" 
+      data-hint="積極尋求新資訊用以掌握問題的前因、後果以及預期影響，並依據各環節選擇適合的學習行為。">主動學習</span>
+<span class="hoverTarget" 
+      data-hint="分析並預判問題的成因與後果，設想出合適的解決方法及使用的工具。">問題解決</span>
+<span class="hoverTarget" 
+      data-hint="能透過語文理解他人想法形成特定概念，且能說明特定想法或因果關係。">語文理解與表達</span>
+<span class="hoverTarget" 
+      data-hint="能捕捉事物運作的規律或關聯性，歸納或是推演不同事物的差異或因果關係，並得到特定理解。">邏輯推理</span>
+<span class="hoverTarget" 
+      data-hint="能選擇適當的科學、數理知識或邏輯來思考問題，依據科學規律正確地推演出答案或排列資訊。">數理科學</span>
+<span class="hoverTarget" 
+      data-hint="能覺察特定事件與觀念、理論之間的差異，且能對事物進行拆解、組合、重新詮釋，呈現新穎之處。">敏銳創造</span></p>
+                        <p class="title">性格特質</p>
+                        <p><span class="hoverTarget" 
+      data-hint="常常主動提出特定見解，樂於付出活力與熱情投入特定問題、活動，引領他人的行動。">主動積極</span>
+<span class="hoverTarget" 
+      data-hint="總是表現活潑、傳遞熱情，主動參與活動，熱衷於與夥伴一同完成任務。">樂群敬業</span>
+<span class="hoverTarget" 
+      data-hint="總是願意優先關照、包容他人的需求，在不同意見中尋求最大的合作可能，優先尋求團體的共同價值，信任團體成員的指引。">合作互助</span>
+</p>
+                        <p class="title">興趣類型</p>
+                        <p><span class="hoverTarget" 
+      data-hint="善於觀察、思考、分析與推理，喜歡用頭腦依自己的步調來解決問題，並追根究底。做事時，他們能提出新的想法和策略，但對實際解決問題的細節較無興趣。喜歡和有相同興趣或專業的人討論，否則寧願自己看書或思考。對數理化、生命科學學群有興趣。">研究型(I)</span>
+<span class="hoverTarget" 
+      data-hint="情緒穩定、有耐性、坦誠直率，他們通常直接行動而不多言，喜歡在講求實際、需要動手的環境中依既定的規則，一步步地製造出有實際用途的物品。對操作工具的技術活動較有興趣，在生活中眼前的事重於對未來的想像，較喜歡獨自做事。">實用型(R)</span>
+</p>
+                        `,
                 subjects: `<p class="title">主要學類</p><p>獸醫  植物保護  生態  農藝  動物科學  園藝  森林  海洋資源  <a href="majors/食品生技.html" target="_blank">食品生技</a></p>
                         <p class="title">核心學科</p><p>生物   英語文   化學   國語文   數學  </p>                        `,
                 //名字要一樣: `<p>xxxx</p>` p.s.前一行結尾記得加[ , ]
@@ -123,7 +150,7 @@
         <img src="images/logo.png" alt=" ">
         <!-- 按鈕和內容綁定，調整內容上面js -->
         <button type="button" class="tabButton" onclick="setActive(this, 'intro')">簡要介紹</button>
-        <button type="button" class="tabButton" onclick="setActive(this, 'traits')">性格特質</button>
+        <button type="button" class="tabButton" onclick="setActive(this, 'traits')">能力特質</button>
         <button type="button" class="tabButton" onclick="setActive(this, 'subjects')">學類學科</button>
         <!-- <button type="button" class="tabButton" onclick="setActive(this, '名字要一樣')">按鈕擴增範例</button> -->
     </div>
