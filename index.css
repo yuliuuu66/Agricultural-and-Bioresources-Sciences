@@ -154,3 +154,25 @@ div.contentArea a {
 div.contentArea a:hover {
     color: white;
 }
+
+table {
+    border-collapse: collapse;
+    background-color: var(--Label-Contect-BG-Color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    width: 15vw;
+    height: 2.5rem;
+    background-color: var(--Label-BG-Color);
+    color: white;
+}
+
+td {
+    width: 15vw;
+    height: 2rem;
+    text-align: center;
+
+}
