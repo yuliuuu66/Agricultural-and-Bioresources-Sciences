@@ -87,8 +87,58 @@ p.title {
     font-size: 0.8rem;
 }
 
+/*提示區域文字背景色*/
 span.hoverTarget {
+    /*背景漢文字左右距離*/
     padding-inline: 5px;
+    /*背景源角*/
     border-radius: 3px;
-    background: rgba(145, 196, 196, 0.45);
+    /*背景顏色*/
+    background: var(--Hover-BG-Color);
+}
+
+/*標籤切換式區塊*/
+div.infoBookmark {
+    /*長寬設定*/
+    width: 900px;
+    height: 200px;
+    /*圓角設定*/
+    border-radius: 15px;
+    /*背景顏色*/
+    background: var(--HintBoard-Color);
+    /*超出的內容隱藏*/
+    overflow: hidden;
+    /*和上下文間距*/
+    margin-block: 10px;
+}
+
+/*按鈕區塊背景色*/
+div.buttonArea {
+    background: var(--Label-BG-Color);
+}
+
+/*文字區塊*/
+div.contentArea p {
+    /*上下、左右間距*/
+    margin-block: 8px;
+    margin-inline: 16px;
+    /*文字大小*/
+    font-size: 0.8rem;
+}
+
+/*標籤按鈕*/
+button.labelButton {
+    /*文字內收間距*/
+    padding-inline: 20px;
+    padding-block: 7px;
+    /*背景顏色*/
+    background: var(--Label-BG-Color);
+    /*左上右上圓角*/
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+/*標籤按鈕點擊*/
+button.labelButtonActive {
+    background: var(--HintBoard-Color);
 }

@@ -7,7 +7,8 @@
     --Text-Color: #402C04;
     --Link-Color: #8fa414;
     --HintBoard-Color: #F5E59F;
-    --Hover-BG-Color: rgba();
+    --Label-BG-Color: #456132;
+    --Hover-BG-Color: rgba(145, 196, 196, 0.45);
 }
 
 /*清除並建立基本樣式*/
@@ -20,6 +21,7 @@ a {
 button {
     background: none;
     border: none;
+    outline: none;
 }
 
 /*滑鼠經過連結換色*/
