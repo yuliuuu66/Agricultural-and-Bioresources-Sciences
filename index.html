@@ -13,34 +13,35 @@
     <script>
         //控制畫面首次載入將第一個按鈕設定選中
         window.onload = function () {
-            const firstButton = document.querySelector('.tabButton');
+            //選中第一個按鈕
+            const firstButton = document.querySelector('.tabButton')
             if (firstButton) {
-                //'intro'要根據下面各個分頁的內容存放的類別改名
-                setActive(firstButton, 'intro');
+                //設定第一個按鈕和內容
+                setActive(firstButton, 'intro')
             }
         }
 
+        //使用事件委派處理 hover 效果，確保動態生成的元素也有效 -> 參考GPT
         document.addEventListener('DOMContentLoaded', () => {
-            const hint = document.querySelector('#hint');
-            const hintText = hint.querySelector('.hint');
-            const contentContainer = document.querySelector('#content');
+            const hint = document.querySelector('#hint')
+            const hintText = hint.querySelector('.hint')
+            const contentContainer = document.querySelector('#content')
 
-            //使用事件委派處理 hover 效果，確保動態生成的元素也有效
+            //滑鼠進入時顯示提示板塊和設定提示板塊的內容
             contentContainer.addEventListener('mouseover', (e) => {
                 const target = e.target.closest('.hoverTarget')
                 if (target) {
-                    // 滑鼠進入時顯示提示板塊和設定提示板塊的內容
                     const content = target.dataset.hint
                     hintText.innerHTML = content
                     hint.style.display = 'block'
                 }
-            });
+            })
 
             //根據滑鼠位置和 10px 偏移量決定提示板塊顯示位置
             contentContainer.addEventListener('mousemove', (e) => {
                 hint.style.top = (e.clientY + 10) + 'px'
                 hint.style.left = (e.clientX + 10) + 'px'
-            });
+            })
 
             //滑鼠離開時再次隱藏提示板塊和內容
             contentContainer.addEventListener('mouseout', (e) => {
@@ -52,9 +53,11 @@
             })
         })
 
+        //用於綁定按鈕和顯示內容
         function setActive(clickedButton, contentKey) {
             const buttons = document.querySelectorAll('.tabButton')
             buttons.forEach(btn => btn.classList.remove('active'))
+            //移除全部的 active(class)
             clickedButton.classList.add('active')
 
             const content = document.getElementById("content")
@@ -129,7 +132,6 @@
                         `,
                 subjects: `<p class="title">主要學類</p><p>獸醫  植物保護  生態  農藝  動物科學  園藝  森林  海洋資源  <a href="majors/食品生技.html" target="_blank">食品生技</a></p>
                         <p class="title">核心學科</p><p>生物   英語文   化學   國語文   數學  </p>                        `,
-                //名字要一樣: `<p>xxxx</p>` p.s.前一行結尾記得加[ , ]
             }
 
             content.innerHTML = contentMap[contentKey]
@@ -141,19 +143,20 @@
                 traits: `<p class="title">性格特質</p><p>對自然有興趣、細心、有耐心。</p>`,
                 subjects: `<p class="title">核心學科</p><p>生物   英語文   化學   國語文   數學  </p>`,
                 majors: `<p class="title">主要學類</p><p>獸醫  植物保護  生態  農藝  動物科學  園藝  森林  海洋資源  <a href="majors/食品生技.html" target="_blank">食品生技</a></p>`
-            };
+            }
 
-            // 找到這個按鈕所屬的 infoBookmark 區塊
-            const infoBlock = clickedButton.closest('.infoBookmark');
+            //找到這個按鈕所屬的 infoBookmark 區塊
+            const infoBlock = clickedButton.closest('.infoBookmark')
 
-            // 移除該區塊內所有 tabButton 的 active
-            const buttons = infoBlock.querySelectorAll('.labelButton');
-            buttons.forEach(btn => btn.classList.remove('labelButtonActive'));
-            clickedButton.classList.add('labelButtonActive');
+            const buttons = infoBlock.querySelectorAll('.labelButton')
+            //移除該區塊內所有 tabButton 的 active(class)
+            buttons.forEach(btn => btn.classList.remove('labelButtonActive'))
+            //選中的加上 active(class)
+            clickedButton.classList.add('labelButtonActive')
 
-            // 將對應內容寫入這個區塊的 contentArea
-            const contentArea = infoBlock.querySelector('.contentArea');
-            contentArea.innerHTML = contentMap[contentKey] || '';
+            //將對應內容寫入這個區塊的 contentArea(div文字區塊)
+            const contentArea = infoBlock.querySelector('.contentArea')
+            contentArea.innerHTML = contentMap[contentKey] || ''
         }
 
     </script>
@@ -161,13 +164,12 @@
 
 <body>
     <div id="tabContainer">
-        <!-- 一張標題圖片可放置，透明底建議 -->
+        <!-- 左側欄按鈕上面的圖片 -->
         <img src="images/logo.png" alt=" ">
         <!-- 按鈕和內容綁定，調整內容上面js -->
         <button type="button" class="tabButton" onclick="setActive(this, 'intro')">簡要介紹</button>
         <button type="button" class="tabButton" onclick="setActive(this, 'traits')">能力特質</button>
         <button type="button" class="tabButton" onclick="setActive(this, 'subjects')">學類學科</button>
-        <!-- <button type="button" class="tabButton" onclick="setActive(this, '名字要一樣')">按鈕擴增範例</button> -->
     </div>
     <div id="content"></div>
     <div id="hint">

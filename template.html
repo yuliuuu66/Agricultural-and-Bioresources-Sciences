@@ -13,17 +13,17 @@
     <script>
         //控制畫面首次載入將第一個按鈕設定選中
         window.onload = function () {
-            const firstButton = document.querySelector('.tabButton');
+            const firstButton = document.querySelector('.tabButton')
             if (firstButton) {
                 //'intro'要根據下面各個分頁的內容存放的類別改名
-                setActive(firstButton, 'intro');
+                setActive(firstButton, 'intro')
             }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            const hint = document.querySelector('#hint');
-            const hintText = hint.querySelector('.hint');
-            const contentContainer = document.querySelector('#content');
+            const hint = document.querySelector('#hint')
+            const hintText = hint.querySelector('.hint')
+            const contentContainer = document.querySelector('#content')
 
             //使用事件委派處理 hover 效果，確保動態生成的元素也有效
             contentContainer.addEventListener('mouseover', (e) => {
@@ -34,13 +34,13 @@
                     hintText.innerHTML = content
                     hint.style.display = 'block'
                 }
-            });
+            })
 
             //根據滑鼠位置和 10px 偏移量決定提示板塊顯示位置
             contentContainer.addEventListener('mousemove', (e) => {
                 hint.style.top = (e.clientY + 10) + 'px'
                 hint.style.left = (e.clientX + 10) + 'px'
-            });
+            })
 
             //滑鼠離開時再次隱藏提示板塊和內容
             contentContainer.addEventListener('mouseout', (e) => {
@@ -99,19 +99,19 @@
                 traits: `<p class="title">性格特質</p><p>對自然有興趣、細心、有耐心。</p>`,
                 subjects: `<p class="title">核心學科</p><p>生物   英語文   化學   國語文   數學  </p>`,
                 majors: `<p class="title">主要學類</p><p>獸醫  植物保護  生態  農藝  動物科學  園藝  森林  海洋資源  <a href="majors/食品生技.html" target="_blank">食品生技</a></p>`
-            };
+            }
 
             // 找到這個按鈕所屬的 infoBookmark 區塊
-            const infoBlock = clickedButton.closest('.infoBookmark');
+            const infoBlock = clickedButton.closest('.infoBookmark')
 
             // 移除該區塊內所有 tabButton 的 active
-            const buttons = infoBlock.querySelectorAll('.labelButton');
-            buttons.forEach(btn => btn.classList.remove('labelButtonActive'));
-            clickedButton.classList.add('labelButtonActive');
+            const buttons = infoBlock.querySelectorAll('.labelButton')
+            buttons.forEach(btn => btn.classList.remove('labelButtonActive'))
+            clickedButton.classList.add('labelButtonActive')
 
             // 將對應內容寫入這個區塊的 contentArea
-            const contentArea = infoBlock.querySelector('.contentArea');
-            contentArea.innerHTML = contentMap[contentKey] || '';
+            const contentArea = infoBlock.querySelector('.contentArea')
+            contentArea.innerHTML = contentMap[contentKey] || ''
         }
 
     </script>

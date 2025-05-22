@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- 這裡要改頁面標題 -->
     <title>學類 食品生技</title>
 
     <link rel="stylesheet" href="../global.css">
@@ -14,34 +13,35 @@
     <script>
         //控制畫面首次載入將第一個按鈕設定選中
         window.onload = function () {
-            const firstButton = document.querySelector('.tabButton');
+            //選中第一個按鈕
+            const firstButton = document.querySelector('.tabButton')
             if (firstButton) {
-                //'intro'要根據下面各個分頁的內容存放的類別改名
-                setActive(firstButton, 'intro');
+                //設定第一個按鈕和內容
+                setActive(firstButton, 'intro')
             }
         }
 
+        //使用事件委派處理 hover 效果，確保動態生成的元素也有效 -> 參考GPT
         document.addEventListener('DOMContentLoaded', () => {
             const hint = document.querySelector('#hint')
             const hintText = hint.querySelector('.hint')
-            const contentContainer = document.querySelector('#content');
+            const contentContainer = document.querySelector('#content')
 
-            //使用事件委派處理 hover 效果，確保動態生成的元素也有效
+            //滑鼠進入時顯示提示板塊和設定提示板塊的內容
             contentContainer.addEventListener('mouseover', (e) => {
                 const target = e.target.closest('.hoverTarget')
                 if (target) {
-                    // 滑鼠進入時顯示提示板塊和設定提示板塊的內容
                     const content = target.dataset.hint
                     hintText.innerHTML = content
                     hint.style.display = 'block'
                 }
-            });
+            })
 
             //根據滑鼠位置和 10px 偏移量決定提示板塊顯示位置
             contentContainer.addEventListener('mousemove', (e) => {
                 hint.style.top = (e.clientY + 10) + 'px'
                 hint.style.left = (e.clientX + 10) + 'px'
-            });
+            })
 
             //滑鼠離開時再次隱藏提示板塊和內容
             contentContainer.addEventListener('mouseout', (e) => {
@@ -53,8 +53,10 @@
             })
         })
 
+        //用於綁定按鈕和顯示內容
         function setActive(clickedButton, contentKey) {
             const buttons = document.querySelectorAll('.tabButton')
+            //移除全部的 active(class)
             buttons.forEach(btn => btn.classList.remove('active'))
             clickedButton.classList.add('active')
 
@@ -145,8 +147,8 @@
                                 <p class="title">性格特質：</p>
                                 <p>針對企業、團體或個人，從事商品或服務之國內外銷售、業務推廣、客戶開發等工作。</p>
                                 <p class="title">104薪資情報：</p>
-                                <p><a href="https://guide.104.com.tw/salary/job/2005003004?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～5.8萬／國內業務</a></p>
-                                <p><a href="https://guide.104.com.tw/salary/job/2005003005?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～6.0萬／國外業務</a></p>                             
+                                <p><a href="https://guide.104.com.tw/salary/job/2005003004?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">4.0萬～5.8萬／國內業務</a></p>
+                                <p><a href="https://guide.104.com.tw/salary/job/2005003005?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">4.0萬～6.0萬／國外業務</a></p>                             
                             </div>
                         </div>
 
@@ -162,7 +164,7 @@
                                 <p class="title">性格特質：</p>
                                 <p>從事研究食品製造及加工問題，發展發展食品或食材之特性、加工、保存、添加物、營養、包裝等工作。</p>
                                 <p class="title">104薪資情報：</p>
-                                <p><a href="https://guide.104.com.tw/salary/job/2008003001?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.7萬～5.0萬／食品研發人員</a></p>                                
+                                <p><a href="https://guide.104.com.tw/salary/job/2008003001?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">3.7萬～5.0萬／食品研發人員</a></p>                                
                             </div>
                         </div>
 
@@ -180,7 +182,7 @@
                                 <p class="title">性格特質：</p>
                                 <p>在品質管制工程師指導下，從事有關品質管制資料的收集、整理、分析、報告與存檔，協助推展品質管制制度，保證產品品質合乎顧客需求之工作。</p>
                                 <p class="title">104薪資情報：</p>
-                                <p><a href="https://guide.104.com.tw/salary/job/2009003009?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.4萬～4.6萬／ISO／品保人員</a>
+                                <p><a href="https://guide.104.com.tw/salary/job/2009003009?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">3.4萬～4.6萬／ISO／品保人員</a>
                             </div>
                         </div>
 
@@ -196,7 +198,7 @@
                                 <p class="title">性格特質：</p>
                                 <p>從事控管食品從原料來源、加工、生產製造到完成品之每個階段的安全衛生管理。</p>
                                 <p class="title">104薪資情報：</p>
-                                <p><a href="https://guide.104.com.tw/salary/job/2006001009?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.4萬～4.5萬／食品衛生管理師</a></p>
+                                <p><a href="https://guide.104.com.tw/salary/job/2006001009?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">3.4萬～4.5萬／食品衛生管理師</a></p>
                             </div>
                         </div>
                         `,
@@ -335,7 +337,6 @@
                         <p class="title">參與實驗操作的流程</p>
                         <p>你可以透過參加課堂實驗、專題或其他學習活動，了解科學實驗的過程，包含主題的發想、基礎科學應用、實際操作驗證、成果撰寫等，有助於你未來進行自然科學的探究活動。</p>
                         `
-                //名字要一樣: `<p>xxxx</p>` p.s.前一行結尾記得加[ , ]
             }
 
             content.innerHTML = contentMap[contentKey]
@@ -347,67 +348,68 @@
                         <p class="title">性格特質：</p>
                         <p>針對企業、團體或個人，從事商品或服務之國內外銷售、業務推廣、客戶開發等工作。</p>
                         <p class="title">104薪資情報：</p>
-                        <p><a href="https://guide.104.com.tw/salary/job/2005003004?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～5.8萬／國內業務</a></p>
-                        <p><a href="https://guide.104.com.tw/salary/job/2005003005?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～6.0萬／國外業務</a></p>`,
+                        <p><a href="https://guide.104.com.tw/salary/job/2005003004?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">4.0萬～5.8萬／國內業務</a></p>
+                        <p><a href="https://guide.104.com.tw/salary/job/2005003005?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">4.0萬～6.0萬／國外業務</a></p>`,
                 job2: `
                         <p class="title">性格特質：</p>
                         <p>從事研究食品製造及加工問題，發展發展食品或食材之特性、加工、保存、添加物、營養、包裝等工作。</p>
                         <p class="title">104薪資情報：</p>
-                        <p><a href="https://guide.104.com.tw/salary/job/2008003001?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.7萬～5.0萬／食品研發人員</a></p>`,
+                        <p><a href="https://guide.104.com.tw/salary/job/2008003001?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">3.7萬～5.0萬／食品研發人員</a></p>`,
                 job3: `
                         <p class="title">性格特質：</p>
                         <p>依據市場產品需求，進行產品的初始設計，並負責新產品製程的導入，並進行製程的檢測，以使新產品能夠穩定生產且符合相關標準之工作。</p>
                         <p class="title">104薪資情報：</p>
-                        <p><a href="https://guide.104.com.tw/salary/job/2009002001?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.0萬～6.0萬／生產技術／製程工程師</a></p>`,
+                        <p><a href="https://guide.104.com.tw/salary/job/2009002001?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">4.0萬～6.0萬／生產技術／製程工程師</a></p>`,
                 job4: `
                         <p class="title">性格特質：</p>
                         <p>從事動植物品種、基因等成分研究，並將其研究結果運用至生物、農業、醫學、工業等領域。</p>
                         <p class="title">104薪資情報：</p>
-                        <p><a href="https://guide.104.com.tw/salary/job/2008003003?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">4.1萬～5.8萬／生物科技研發人員</a>`,
+                        <p><a href="https://guide.104.com.tw/salary/job/2008003003?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">4.1萬～5.8萬／生物科技研發人員</a>`,
                 job5: `
                         <p class="title">性格特質：</p>
                         <p>在品質管制工程師指導下，從事有關品質管制資料的收集、整理、分析、報告與存檔，協助推展品質管制制度，保證產品品質合乎顧客需求之工作。</p>
                         <p class="title">104薪資情報：</p>
-                        <p><a href="https://guide.104.com.tw/salary/job/2009003009?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.4萬～4.6萬／ISO／品保人員</a>`,
+                        <p><a href="https://guide.104.com.tw/salary/job/2009003009?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">3.4萬～4.6萬／ISO／品保人員</a>`,
                 job6: `
                         <p class="title">性格特質：</p>
                         <p>根據品質管制標準規格，檢查成品，使其符合製造標準之工作。</p>
                         <p class="title">104薪資情報：</p>
-                        <p><a href="https://guide.104.com.tw/salary/job/2009003010?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.1萬～4.0萬／品管／檢驗人員</a>`,
+                        <p><a href="https://guide.104.com.tw/salary/job/2009003010?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">3.1萬～4.0萬／品管／檢驗人員</a>`,
                 job7: `
                         <p class="title">性格特質：</p>
                         <p>從事職業工作場所、產品生產、使用及銷售等安全衛生檢驗或檢查工作。</p>
                         <p class="title">104薪資情報：</p>
-                        <p><a href="https://guide.104.com.tw/salary/job/2009004002?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.5萬～4.5萬／安全／衛生相關檢驗人員</a></p>`,
+                        <p><a href="https://guide.104.com.tw/salary/job/2009004002?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">3.5萬～4.5萬／安全／衛生相關檢驗人員</a></p>`,
                 job8: `
                         <p class="title">性格特質：</p>
                         <p>從事控管食品從原料來源、加工、生產製造到完成品之每個階段的安全衛生管理。</p>
                         <p class="title">104薪資情報：</p>
-                        <p><a href="https://guide.104.com.tw/salary/job/2006001009?analyze=mix&amp;salary=monthly&amp;utm_source=collego&amp;utm_medium=major" target="_blank">3.4萬～4.5萬／食品衛生管理師</a></p>`,
+                        <p><a href="https://guide.104.com.tw/salary/job/2006001009?analyze=mix&ampsalary=monthly&amputm_source=collego&amputm_medium=major" target="_blank">3.4萬～4.5萬／食品衛生管理師</a></p>`,
                 IS: `<p>喜歡觀察紀錄事物，行為與思考有時以研究規劃為導向，關懷生命，有興趣於生物及人類行為的研究並與別人討論。頗熱衷人際關係的問題或新的管理方式，在工作時常會提出問題解決方案，但不喜歡扮演決策或執行的角色。喜歡融入人群，樂觀而不喜歡競爭，人際關係良好，擅於傾聽與幫助別人，是個好的支援者。</p>`,
                 IA: `<p>好奇心強，樂於嘗試新鮮事務；喜歡觀察、思考，探討理論或科學的問題，能在研究發展新的理論模式或策略有好的表現。工作時會找出問題重點及提出解決方案，觀察紀錄別人的工作方式，喜歡規劃，但對實際解決問題的細節較無興趣，工作和思考學習的過程中不喜歡被打擾。喜歡自在的生活，不喜歡時間壓力，也不喜歡過多的責任或干預。適合擔任幕僚或顧問的角色，能替別人解決工作上的問題。喜歡獨立作業，不喜多言但會適時提出建言，為人隨興而致，心中雖有堅持卻遇到爭執時會為配合而妥協。有時可能因思慮過多而難下決定。</p>`,
                 IR: `<p>喜歡手腦並用、追根究底、有效率地完成工作或實驗。會去觀察別人做事的方法，並以邏輯分析的方式，深思熟慮、有系統地解決問題，或製造新的物品。較偏重於研究或新產品的開發，處理問題常有獨到的見解，不喜歡受別人的指揮或干涉。喜歡自然科學，由於注重本身智能的成長，喜歡接近令他們感興趣的專業人士，以獲得學習的機會，對自己喜歡的事物會全心投入學習。不刻意追求冒險、較不喜歡擔任領導或依規定太多的工作。有時會顯得猶豫不決，也不喜歡頻繁的人際活動，不太在乎別人的看法，但若遇爭執時，會願意配合多數人的意見而妥協。</p>`,
                 IE: `<p>喜歡研究觀察，有領導團隊的興趣，希望在社團或班級中成為幹部，做事有計畫肯努力，在團體中能熱絡地與他人談話。由於對研究發展及市場經營都很有興趣，所以喜歡發展實用且具有利潤的產品，並努力拓展銷路，證明產品的價值。不精於儀器、實驗或手藝等事務，工作時將可擔任在研發設計部門和行銷部門之間的協調溝通的角色。</p>`,
-            };
+            }
 
-            // 找到這個按鈕所屬的 infoBookmark 區塊
-            const infoBlock = clickedButton.closest('.infoBookmark');
+            //找到這個按鈕所屬的 infoBookmark 區塊
+            const infoBlock = clickedButton.closest('.infoBookmark')
 
-            // 移除該區塊內所有 tabButton 的 active
-            const buttons = infoBlock.querySelectorAll('.labelButton');
-            buttons.forEach(btn => btn.classList.remove('labelButtonActive'));
-            clickedButton.classList.add('labelButtonActive');
+            //移除該區塊內所有 tabButton 的 active(class)
+            const buttons = infoBlock.querySelectorAll('.labelButton')
+            buttons.forEach(btn => btn.classList.remove('labelButtonActive'))
+            //選中的加上 active(class)
+            clickedButton.classList.add('labelButtonActive')
 
-            // 將對應內容寫入這個區塊的 contentArea
-            const contentArea = infoBlock.querySelector('.contentArea');
-            contentArea.innerHTML = contentMap[contentKey] || '';
+            //將對應內容寫入這個區塊的 contentArea(div文字區塊)
+            const contentArea = infoBlock.querySelector('.contentArea')
+            contentArea.innerHTML = contentMap[contentKey] || ''
         }
     </script>
 </head>
 
 <body>
     <div id="tabContainer">
-        <!-- 一張標題圖片可放置，透明底建議 -->
+        <!-- 左側欄按鈕上面的圖片 -->
         <img src="../images/food.png" alt="">
         <!-- 按鈕和內容綁定，調整內容上面js -->
         <button type="button" class="tabButton" onclick="setActive(this, 'intro')">學類介紹</button>
@@ -416,14 +418,8 @@
         <button type="button" class="tabButton" onclick="setActive(this, 'ability')">能力特質</button>
         <button type="button" class="tabButton" onclick="setActive(this, 'schools')">對應校系</button>
         <button type="button" class="tabButton" onclick="setActive(this, 'experience')">學類體驗</button>
-        <!-- <button type="button" class="tabButton" onclick="setActive(this, '名字要一樣')">按鈕擴增範例</button> -->
     </div>
-    <div id="content">
-        <p>移動到 <span class="hoverTarget" data-hint="這是提示填寫<br>使用br換行">這裡面的文字會控制hover效果</span></p>
-        <p> <span class="hoverTarget"
-                data-hint="營養只是食品的一部份，安全更不容忽視，本學類課程內容包含營養學，更具備食品加工 （製備） 與食品安全的理論、實作與應用課程。">食品只需重視營養說明 !?</span></p>
-
-    </div>
+    <div id="content"></div>
     <div id="hint">
         <p class="hint">
         </p>
